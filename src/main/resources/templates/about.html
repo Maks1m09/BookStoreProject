@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>home</title>
+    <title>${title}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="container mt-5">
+
+    <h1> О нас</h1>
+    <!--/*@thymesVar id="shops" type=""*/-->
+    <div th:each="el : ${shops}" class="alert alert-info mt-2">
+        <h3 th:text="${el.shopName}"/>
+        <p th:text="${el.location}"/>
+        <p th:text="${el.information}"/>
+    </div>
+
+</div>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>
